@@ -1,4 +1,3 @@
-
 terraform {
   required_version = "~> 0.12"
 }
@@ -14,5 +13,9 @@ resource "aws_instance" "hello-tf-instance" {
   count = var.hello_tf_instance_count
   instance_type = var.hello_tf_instance_type
   subnet_id = "subnet-01bf3fa56d7711b52"
+  tags = {
+    owner = "Kabu"
+    ttl   = "100"
+  }
 }
 
